@@ -10,13 +10,10 @@ defmodule Tutorial do
       _, _, third -> third
     end
     pass_fizzbuzz = fn n -> fizzbuzz.(rem(n,3), rem(n,5), n)  end
-
     prefix = fn name -> (fn name2 -> "#{name} #{name2}" end) end
 
-    mrs = prefix.("Mrs")
-    IO.inspect(mrs.("Smith"))
-
-    IO.inspect(prefix.("Elixir").("Rocks"))
+    Enum.map [1,2,3,4], &(IO.inspect &1 + 2)
+    Enum.each [1,2,3,4], &(IO.inspect &1)
   end
 
   def patternMatching3() do
