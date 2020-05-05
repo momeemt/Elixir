@@ -32,4 +32,14 @@ defmodule Calc do
   defp _ceasar(x, n) do
     x + n
   end
+
+  def span(from, to) do
+    _span from, to, [from]
+  end
+  def _span(from, to, list) when from === to do
+    list
+  end
+  def _span(from, to, list) when from !== to do
+    _span from+1, to, list ++ [from+1]
+  end
 end
